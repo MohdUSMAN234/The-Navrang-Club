@@ -153,3 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
     clearTimeout(timeout);
   });
 });
+function hideSpinner(video) {
+  // Hide spinner when video is ready to play
+  video.parentElement.querySelector('.spinner').style.display = 'none';
+}

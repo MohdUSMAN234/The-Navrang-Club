@@ -26,7 +26,6 @@
 </head>
 
 <body>
-  
   <header>
     <div class="container">
       <div class="logo">
@@ -48,58 +47,60 @@
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <!-- <div class="hamburger">
-          
-          
+        <!-- <div class="hamburger">   
         </div>  -->
       </nav>
 
-      <div class="cta">
+      <div class="rounded-social-buttons cta">
         <a href="https://chat.whatsapp.com/KKi8mCWJQRNJ5R9DE47NQM" class="button" target="_blank">Join Now</a>
-        <a href="https://www.instagram.com/navrang.psit/" class="fa fa-instagram" target="_blank"></a>
-        <a href="https://www.linkedin.com/company/navrang-club-psit/" class="fa fa-linkedin" target="_blank"></a>
+        <a href="https://www.instagram.com/navrang.psit/" class="social-button instagram" target="_blank"><i
+            class="fab fa-instagram"></i></a>
+        <a class="social-button facebook" href="https://www.facebook.com/NAVRANG.PSIT/" target="_blank"><i
+            class="fab fa-facebook-f"></i></a>
+        <a class="social-button twitter" href="https://twitter.com/navrangclub" target="_blank"><i
+            class="fab fa-twitter"></i></a>
+        <a class="social-button linkedin" href="https://www.linkedin.com/in/navrang-psit/?originalSubdomain=in" target="_blank"><i
+            class="fab fa-linkedin"></i></a>
 
         <!-- </div>
       <a href="https://www.facebook.com/NAVRANG.PSIT/" class="fa fa-facebook"></a>
       <a href="#" class="fa fa-youtube"></a> -->
       </div>
+      <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+        integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+        crossorigin="anonymous"></script>
 
   </header>
   <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-        <path fill="none" d="M0 0h24v24H0z"/>
-        <path d="M12 2L0 14h8v8h8V14h8z"/>
+      <path fill="none" d="M0 0h24v24H0z" />
+      <path d="M12 2L0 14h8v8h8V14h8z" />
     </svg>
-</button>
+  </button>
 
-<script>
-  // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+  <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
 
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         document.getElementById("scrollToTopBtn").style.display = "block";
-    } else {
+      } else {
         document.getElementById("scrollToTopBtn").style.display = "none";
+      }
     }
-}
 
-// When the user clicks on the button, scroll to the top of the document
-function scrollToTop() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-
-</script>
-
+    // When the user clicks on the button, scroll to the top of the document
+    function scrollToTop() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+  </script>
   <section class="video-section">
     <div class="video-container">
       <video autoplay muted>
         <source src="video/video2.mp4" type="video/mp4">
       </video>
-      <!-- <audio id="background-music" loop>
-        <source src="img/22232.mp3" type="audio/mp3">
-      </audio> -->
     </div>
   </section>
   <section class="video-section">
@@ -109,7 +110,6 @@ function scrollToTop() {
       </video>
     </div>
   </section>
-
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const video = document.getElementById('video');
@@ -391,7 +391,7 @@ function scrollToTop() {
           <a href="https://forms.gle/ePtTBu18EdiPmdgK7" class="btn" target="_blank">Register Now</a>
         </div>
         <div class="event-image">
-          <img src="img/danzeal.jpg" alt="Spring Showcase">
+          <img src="img/danzeal3.jpg" alt="Spring Showcase">
         </div>
       </div>
       <!-- Add more events as needed -->
@@ -437,25 +437,6 @@ function scrollToTop() {
         </div>
         <script src="gallery.js"></script>
       </div>
-
-
-      <!-- <div class="card">
-        <img src="img/us.jpg" alt="Mohd Usman">
-        <h1>Mohd Usman</h1>
-        <p class="title">Design by. </p>
-        <button onclick="openPopup()">View Profile</button>
-      </div>
-    
-      <div id="popup" class="popup">
-        <div class="popup-content">
-          <span class="close" onclick="closePopup()">&times;</span>
-          <img src="img/us.jpg" alt="John Doe">
-          <h1>Mohd Usman</h1>
-          <p class="title">Web Developer</p>
-          <p>Student of It-B. Work and develped many such project. Active Member of the Navrang Club.</p>
-          <a href="https://www.instagram.com/imusmann_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="fa fa-instagram">Do Follow</a>
-        </div>
-      </div> -->
 
       <script src="pop.js"></script>
   </section>

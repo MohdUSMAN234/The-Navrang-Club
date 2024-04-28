@@ -7,32 +7,6 @@ body {
   
 }
 
-.dark-theme {
-  background-color: #333; /* Dark background color */
-  color: #fff; /* Light text color */
-}
-
-.dark-theme .member {
-  background-color: #444; /* Dark background color for each member */
-  border: 1px solid #666; /* Border color */
-}
-
-.dark-theme h2 {
-  color: #fff; /* Light text color for headings */
-}
-
-.dark-theme p {
-  color: #ccc; /* Light text color for paragraphs */
-}
-
-.dark-theme .social-link {
-  color: #ccc; /* Light text color for social media icons */
-}
-
-.dark-theme .social-link:hover {
-  color: #fff; /* Light text color on hover for social media icons */
-}
-
 
 .modall {
   display: none;
@@ -121,7 +95,7 @@ video {
   overflow: hidden;
 }
 .hero {
-  background-image: url(/img/head.png);
+  background-image: url(img/head.png);
   background-size: cover;
   background-position: center;
   height: 55vh;
@@ -146,6 +120,24 @@ video {
   left: 2px;
   margin-top: -221px;
 } */
+}
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* Additional styling for the rest of your page */
@@ -197,6 +189,129 @@ video {
   color: red; /* Change color on hover if desired */
 }
 
+@media (max-width: 767px){
+  .rounded-social-buttons .social-button {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 2.125rem;
+    height: 2.125rem;
+    border: 0.125rem solid transparent;
+    padding: 0;
+    text-decoration: none;
+    text-align: center;
+    color: #fefefe;
+    font-size: 1.5625rem;
+    font-weight: normal;
+    line-height: 2em;
+    border-radius: 1.6875rem;
+    transition: all 0.5s ease;
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+.svg-inline--fa {
+  vertical-align: 0em;
+}
+}  
+
+.svg-inline--fa {
+  vertical-align: -0.200em;
+}
+
+.rounded-social-buttons {
+  text-align: center;
+  margin-right: -115px;
+}
+
+.rounded-social-buttons .social-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 3.125rem;
+  height: 3.125rem;
+  border: 0.125rem solid transparent;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  color: #fefefe;
+  font-size: 1.5625rem;
+  font-weight: normal;
+  line-height: 2em;
+  border-radius: 1.6875rem;
+  transition: all 0.5s ease;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-tiktok, .fa-youtube, .fa-instagram {
+  font-size: 25px;
+}
+
+.rounded-social-buttons .social-button.facebook {
+  background: #3b5998;
+}
+
+.rounded-social-buttons .social-button.facebook:hover, .rounded-social-buttons .social-button.facebook:focus {
+  color: #3b5998;
+  background: #fefefe;
+  border-color: #3b5998;
+}
+
+.rounded-social-buttons .social-button.twitter {
+  background: #55acee;
+}
+
+.rounded-social-buttons .social-button.twitter:hover, .rounded-social-buttons .social-button.twitter:focus {
+  color: #55acee;
+  background: #fefefe;
+  border-color: #55acee;
+}
+
+.rounded-social-buttons .social-button.linkedin {
+  background: #007bb5;
+}
+
+.rounded-social-buttons .social-button.linkedin:hover, .rounded-social-buttons .social-button.linkedin:focus {
+  color: #007bb5;
+  background: #fefefe;
+  border-color: #007bb5;
+}
+
+.rounded-social-buttons .social-button.tiktok {
+  background: #000000;
+}
+
+.rounded-social-buttons .social-button.tiktok:hover, .rounded-social-buttons .social-button.tiktok:focus {
+  color: #000000;
+  background: #fefefe;
+  border-color: #000000;
+}
+
+.rounded-social-buttons .social-button.youtube {
+  background: #bb0000;
+}
+
+.rounded-social-buttons .social-button.youtube:hover, .rounded-social-buttons .social-button.youtube:focus {
+  color: #bb0000;
+  background: #fefefe;
+  border-color: #bb0000;
+}
+
+.rounded-social-buttons .social-button.instagram {
+  background: #125688;
+}
+
+.rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.instagram:focus {
+  color: #125688;
+  background: #fefefe;
+  border-color: #125688;
+}
 
 /* Add this CSS to your existing styles or your stylesheet */
 
@@ -255,71 +370,6 @@ video {
 }
 
 
-
-/* Add animations for individual icons if needed */
-
-/* .neon-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-}
-
-.neon-cursor {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #fff, #d700f8, #ff00ff);
-  animation: neonGlow 1.5s infinite alternate;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.neon-trail {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #fff, #d700f8, #ff00ff);
-  animation: trailGlow 1s infinite;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease-out;
-  z-index: 0;
-}
-
-@keyframes neonGlow {
-  0% {
-      box-shadow: 0 0 10px #d700f8, 0 0 20px #d700f8, 0 0 30px #d700f8, 0 0 40px #d700f8, 0 0 70px #d700f8, 0 0 80px #d700f8, 0 0 100px #d700f8;
-  }
-  100% {
-      box-shadow: 0 0 20px #d700f8, 0 0 40px #d700f8, 0 0 60px #d700f8, 0 0 80px #d700f8, 0 0 110px #d700f8, 0 0 130px #d700f8, 0 0 150px #d700f8;
-  }
-}
-
-@keyframes trailGlow {
-  0% {
-      opacity: 1;
-  }
-  100% {
-      opacity: 0;
-  }
-}
-
-.neon-cursor.is-active {
-  transform: scale(1.5);
-}
-
-.neon-cursor.is-active + .neon-trail {
-  left: calc(50% - 50px);
-  top: calc(50% - 50px);
-  opacity: 1;
-} */
-
 html{
 scroll-behavior: smooth;
 }
@@ -363,23 +413,6 @@ position: relative;
       height: 52px;
       margin-left: -99px;
   
-}
-
-/* .navbar{
-  min-height: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.nav-menu{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 50px;
-  list-style-type: none;
-}
-.nav-link{
-  transition: 0.7s ease;
 }
 .nav-link:hover{
   color:  #ccc;
@@ -435,25 +468,6 @@ body {
   align-items: center;
 }
 
-/* .hamburger-menu {
-  display: none;
-}
-
-.hamburger-icon {
-  width: 30px;
-  height: 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.bar {
-  width: 100%;
-  height: 3px;
-  background-color: #fff;
-  border-radius: 5px;
-} */
 
 .nav-menu {
   list-style-type: none;
@@ -563,7 +577,7 @@ body {
 }
 
 .hero {
-  background-image: url('img/nav66.JPG'); /* Replace 'hero-background.jpg' with your actual image file */
+  background-image: url('/img/nav66.JPG'); /* Replace 'hero-background.jpg' with your actual image file */
   background-size: cover;
   background-position: center;
   height: 100vh; /* Adjust the height as needed */
@@ -589,6 +603,7 @@ font-style: normal;
   font-size: 1.2rem;
   margin-bottom: 30px;
 }
+
 
 .cta-btn {
   display: inline-block;
@@ -1520,6 +1535,12 @@ h2 {
       margin-bottom: -125px; */
       margin: auto;
   }
+  
+    a.button {
+        width: 33px;
+        height: 30px;
+    
+  }
     }
   
 
@@ -1650,7 +1671,7 @@ to {
 header {
   background-color: #222;
   color: #fff;
-  padding: 6px 0;
+  padding: 16px 0;
   margin: -13px;
 }
 }
@@ -1845,7 +1866,7 @@ header {
 @media (max-width: 467px){
 a.button {
     width: 33px;
-    height: 23px;
+    height: 30px;
 }
 
 nav ul {
@@ -1867,7 +1888,7 @@ nav ul {
 }
 .logo img {
   height: 52px;
-  margin-left: -120px;
+  margin-left: -98px;
 }
 
 .card {
@@ -1973,73 +1994,3 @@ body {
 .card {
   margin-left: 60px;
 }
-
-
-/* .hamburger{
-  display: none;
-  cursor: pointer;
-}
-.bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background-color: white;
-}
-
-@media (max-width: 768px){
-  .hamburger{
-    display: block;
-  }
-
-  .hamburger.active .bar:nth-child(2){
-    opacity: 0;
-  }
-  .hamburger.active .bar:nth-child(1){
-    transform: translateY(8px) rotate(45deg);
-  }
-  .hamburger.active .bar:nth-child(3){
-    transform: translateY(-8px) rotate(-45deg);
-  }
-  .nav-menu{
-    position: fixed;
-    left: -100%;
-    top:70px ;
-    gap: 0;
-    flex-direction: column;
-    background-color: #222;
-    width: 100%;
-    text-align: center;
-    transition: 0.3s;
-  }
-  .nav-item{
-    margin: 16px 0;
-
-  }
-  .nav-menu.active{
-    left: 0;
-
-  }
-}
- */
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
