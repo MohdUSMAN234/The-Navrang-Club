@@ -1,83 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>College News</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<style>
+  <title>President's Message</title>
+  <style>
     body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #222;
+      color: #fff;
+    }
 
-.news-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
 
-h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
+    .content {
+      flex: 1;
+      padding: 20px;
+      background: linear-gradient(to right, #333, #444);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+    }
 
-#news-list {
-  list-style-type: none;
-  padding: 0;
-}
+    .content:hover {
+      transform: translateY(-5px);
+    }
 
-.news-item {
-  margin-bottom: 20px;
-}
+    .image {
+      flex: 1;
+      padding: 20px;
+      border: 2px solid #ffcc00;
+      border-radius: 10px;
+    }
 
-.news-title {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
 
-.news-content {
-  font-size: 14px;
-}
+    img:hover {
+      transform: scale(1.1);
+    }
 
-</style>
+    h1 {
+      color: #ffcc00;
+      margin-bottom: 20px;
+      animation: slideIn 1s ease forwards;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .signature {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* Animation */
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .container {
+        flex-direction: column;
+        align-items: flex-start;
+        /* Adjust alignment */
+      }
+
+      .image {
+        flex: 1;
+        margin-bottom: 20px;
+        /* Add margin to separate from content */
+      }
+
+      .content {
+        flex: 1;
+      }
+    }
+
+    .home-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #ffcc00;
+      color: #222;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      z-index: 9999;
+    }
+
+    .home-button:hover {
+      background-color: #fff;
+      color: #222;
+    }
+  </style>
+</head>
+
 <body>
-  <div class="news-container">
-    <h2>Quick News</h2>
-    <ul id="news-list"></ul>
-  </div>
+  <div class="container">
+    <div class="content">
+      <h1>A note from The Vice President</h1>
+      <p>
+        As a Vice President, I pledge to uphold the values of inclusivity, respect, and unity that define our club. I
+        envision a year filled with engaging events, thought-provoking discussions, and meaningful collaborations that
+        deepen our understanding of each other's cultures.
+      </p>
+      <p>As your vice president, I am committed to ensuring that our club remains a welcoming space for all, where every
+        member feels valued, respected, and empowered to share their cultural heritage.
+      </p>
+      <p>Together, let us embark on a journey of exploration, learning, and connection.
+        Together, let us continue to make our Cultural Club a beacon of diversity and understanding</p>
 
-  <script src="script.js">
-    document.addEventListener("DOMContentLoaded", function() {
-  const newsList = document.getElementById('news-list');
 
-  // Dummy data for demonstration
-  const dummyNews = [
-    { title: "Exciting Event Coming Up!", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-    { title: "New Scholarship Opportunities", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-    { title: "Faculty Announcement", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." }
-  ];
+      <p> Our cultural club is more than just a gathering of like-minded individuals; it is a platform for dialogue,
+        learning, and celebration. It is a place where we not only embrace our own heritage but also embrace and respect
+        the heritage of others. It is through this mutual respect and understanding that we foster a sense of unity and
+        belonging that transcends borders and differences.</p>
 
-  // Function to display news articles
-  function displayNews() {
-    newsList.innerHTML = '';
-    dummyNews.forEach(news => {
-      const listItem = document.createElement('li');
-      listItem.classList.add('news-item');
-      listItem.innerHTML = `
-        <h3 class="news-title">${news.title}</h3>
-        <p class="news-content">${news.content}</p>
-      `;
-      newsList.appendChild(listItem);
-    });
-  }
 
-  // Display news articles initially
-  displayNews();
-});
+      <p>Thank you for entrusting me with this role, and I look forward to working alongside each and every one of you
+        to make our cultural club an even stronger force for unity and inclusion in our community.</p>
 
-  </script>
+      <p> Muskan Sinha
+        Vice President, The Navrang Club PSIT 
+      </p>
+
+
+      <p class="signature">Follow me on Instagram: @muskaaansinhaa</p>
+    </div>
+    <div class="image">
+      <img src="img/blog5.JPG" alt="President Prakhar Srivastava">
+    </div>
+    <button class="home-button" onclick="goToHomePage()">Home</button>
+
+    <script>
+      function goToHomePage() {
+        // Replace the URL with the actual home page URL
+        window.location.href = "index.html";
+      }
+    </script>
 </body>
+
 </html>
