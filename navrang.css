@@ -690,10 +690,11 @@ h2 {
   padding: 50px 0;
   background-color: #000000;
 }
-.eve{
-   background-color: #000000;
+.eve {
+    /* background-color: #ffffff; */
+    color: aliceblue;
+    margin-right: 21px;
 }
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
