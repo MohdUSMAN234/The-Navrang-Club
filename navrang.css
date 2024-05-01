@@ -2017,3 +2017,16 @@ body {
 .card {
   margin-left: 60px;
 }
+
+.map-container {
+  text-align: center; /* Center the map */
+  margin-bottom: 20px; /* Add some space below the map */
+}
+
+.map-container iframe {
+  width: 90%; /* Make the map fill 90% of the container */
+  max-width: 1000px; /* Limit the maximum width of the map */
+  height: 300px; /* Reduce the height of the map */
+  border: 1px solid #ddd; /* Add a border for aesthetics */
+  border-radius: 5px; /* Add some border radius for a softer look */
+}
