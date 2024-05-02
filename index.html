@@ -84,6 +84,8 @@
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        <input type="checkbox" id="theme-toggle" class="theme-toggle">
+        <label for="theme-toggle" class="theme-switch"></label>
       </nav>
 
       <div class="rounded-social-buttons cta">
@@ -104,6 +106,21 @@
       <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
         integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
         crossorigin="anonymous"></script>
+      <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const siteHeader = document.getElementById('site-header');
+
+        themeToggle.addEventListener('change', () => {
+          if (themeToggle.checked) {
+            siteHeader.classList.remove('dark-theme');
+            siteHeader.classList.add('light-theme');
+          } else {
+            siteHeader.classList.remove('light-theme');
+            siteHeader.classList.add('dark-theme');
+          }
+        });
+
+      </script>
 
   </header>
   <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">
