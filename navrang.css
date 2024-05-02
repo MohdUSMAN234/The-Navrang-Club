@@ -3,9 +3,58 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
-    
-  
 }
+
+
+/* Example CSS for dark theme */
+.dark-theme {
+  background-color: #333; /* Change this color to your dark theme color */
+  color: #fff; /* Change text color for better readability */
+}
+
+/* Example CSS for light theme */
+.light-theme {
+  background-color: #a1a4e2; /* Change this color to your light theme color */
+  color: #333; /* Change text color for better readability */
+}
+
+/* Custom styles for the sliding button */
+.theme-toggle {
+  display: none; /* Hide the checkbox */
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 80px; /* Increase width for a bigger button */
+  height: 40px; /* Increase height for a bigger button */
+  background-color: transparent; /* Set background color to transparent */
+  background-image: url('img/ba.webp'); /* Add your custom background image */
+  background-size: cover; /* Adjust background size as needed */
+  border-radius: 40px; /* Ensure the border-radius is half of the height for a round button */
+  cursor: pointer;
+}
+
+.theme-switch::after {
+  content: '';
+  position: absolute;
+  top: 4px; /* Adjust top position for vertical centering */
+  left: 4px; /* Adjust left position for horizontal centering */
+  width: 32px; /* Reduce the size of the inner circle for better visibility */
+  height: 32px; /* Reduce the size of the inner circle for better visibility */
+  background-color: #fff; /* Fallback color */
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.theme-toggle:checked + .theme-switch {
+  background-color: #62d6fb; /* Change background color when checked */
+}
+
+.theme-toggle:checked + .theme-switch::after {
+  transform: translateX(36px); /* Move the switch to the right when checked */
+}
+
 
 
 .modall {
