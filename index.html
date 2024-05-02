@@ -21,7 +21,44 @@
   <link rel="stylesheet" href="navrang.js">
   <link rel="stylesheet" href="core.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script>
+    let hidden, visibilityChange;
 
+    if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and later support
+      hidden = "hidden";
+      visibilityChange = "visibilitychange";
+    } else if (typeof document.msHidden !== "undefined") {
+      hidden = "msHidden";
+      visibilityChange = "msvisibilitychange";
+    } else if (typeof document.webkitHidden !== "undefined") {
+      hidden = "webkitHidden";
+      visibilityChange = "webkitvisibilitychange";
+    }
+
+    function handleVisibilityChange() {
+      if (document[hidden]) {
+        // The tab has been switched
+        document.title = "Please come back!";
+        changeFavicon(href="img/han.png"); // Change favicon to folded hand symbol
+      } else {
+        // The tab has been focused again
+        document.title = "The Navang Club"; // Restore original title
+        changeFavicon(href="img/nav55.png"); // Change favicon back to original
+      }
+    }
+
+    // Function to change favicon dynamically
+    function changeFavicon(src) {
+      const link = document.querySelector("link[rel='shortcut icon']") || document.createElement('link');
+      link.type = 'image/x-icon';
+      link.rel = 'shortcut icon';
+      link.href = src;
+      document.getElementsByTagName('head')[0].appendChild(link);
+    }
+
+    // Warn user when they switch tabs
+    document.addEventListener(visibilityChange, handleVisibilityChange, false);
+  </script>
 
 </head>
 
