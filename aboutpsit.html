@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+       body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .clip-art {
+        width: 100%;
+        max-width: 100%;
+    }
+    .header-image {
+        width: 100%;
+        background-color: rgb(0, 0, 0); /* Blue background */
+        border-top: 15px solid yellow; /* Yellow top border */
+        border-bottom: 15px solid yellow; /* Yellow bottom border */
+        box-sizing: border-box; /* Include border in width calculation */
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+    .image {
+        flex: 1;
+        max-width: 50%;
+    }
+    .image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .content {
+        flex: 1;
+        max-width: 50%;
+        padding: 0 20px;
+        position: relative;
+    }
+    .content h2 {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .content h2:after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 3px;
+        background-color: yellow;
+        margin: 0 auto 15px;
+    }
+    .content p {
+        margin-bottom: 20px;
+    }
+    .social-links {
+        display: flex;
+    }
+    .social-links a {
+        display: inline-block;
+        margin-right: 10px;
+        color: #333;
+        text-decoration: none;
+        background-color: #eee;
+        padding: 10px;
+    }
+    
+    .home-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #ffcc00;
+      color: #222;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      z-index: 9999;
+    }
+
+    .home-button:hover {
+      background-color: #fff;
+      color: #222;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="header-image">
+        <img src="img/ABOUT1.webp" alt="Header Image">
+    </div>
+    <div class="container">
+        <div class="image">
+            <img src="img/aboutpsit.webp" alt="About Us">
+        </div>
+        <div class="content">
+            <h2>About Us</h2>
+            <p>Since its inception in 2004, Pranveer Singh Institute of Technology (PSIT), Kanpur has been a frontrunner
+                in the field of education with numerous achievements to its name. PSIT believes in strengthening the
+                foundation of the students. Academic research based on rigorous pedagogy equips our students to face
+                challenges in the real world. The institute prepares students to be ethical leaders in a diverse and
+                complex world. PSIT offers various courses in Engineering, Business Management and Computer
+                Applications. All departments, with their dynamic community of students and distinguished faculty, offer
+                premium undergraduate and postgraduate programs. State of the art facilities and a sprawling 80 acres
+                campus nestled amid sylvan surroundings accelerate the learning process.</p>
+
+                <p>The PSIT campus is an architectural marvel. Designed as the best environment-friendly campus in North
+                India, we are committed to providing our students a clean and healthy environment. A 25,000 Ltr RO
+                Plant, a 1350 KW Power Plant and a three-chambered Vermicompost Plant reaffirm our commitment to the
+                cause.</p>
+
+                <p> Our infrastructure, which includes an auditorium, modern workshops, high-tech labs, spacious seminar
+                halls and well stocked libraries, can compete with the best campuses. Internet access at 1.5 Gbps (STM
+                -1) with 500 Mbps backup line, a 24×7 Power Backup enabled through 33KV Power Line fuel our thirst for
+                knowledge. Our fleet of 38 air-conditioned CNG buses ensures an efficient transportation network.</p>
+
+                <p> The institute provides a stimulating environment for intellectual development, free-thinking, and
+                personal growth. The academic setup challenges its students with dynamic learning opportunities. We
+                equip them with the skills, insights, attitudes, and practical experiences to take up responsibilities
+                in their careers and life.</p>
+
+                <p> PSIT owes its commitment to excellence to its illustrious faculty. A stringent selection process of
+                faculty members is the cornerstone of our success. The exceptionally talented and seasoned teaching
+                fraternity motivates the students to push boundaries and become the best versions of themselves.</p>
+
+                <p> The annual placement portfolio of PSIT is a testimony to its excellent track record of outstanding
+                placements through which our students are ready to carve a niche for themselves in the professional
+                world.</p>
+
+                <p> PSIT prepares its students to establish themselves in their chosen field of academics with an aim to
+                develop well-rounded and discerning citizens.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </div>
+    <button class="home-button" onclick="goToHomePage()">Home</button>
+
+    <script>
+      function goToHomePage() {
+        // Replace the URL with the actual home page URL
+        window.location.href = "index.html";
+      }
+    </script>
+</body>
+
+</html>
