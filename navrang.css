@@ -621,6 +621,8 @@ body {
   border: none;
   border-radius: 5px;
   text-decoration: none;
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
 }
 
 
