@@ -55,6 +55,11 @@ body {
   transform: translateX(36px); /* Move the switch to the right when checked */
 }
 
+@media (max-width: 768px) {
+  label.theme-switch {
+    display: none;
+  }
+}
 
 
 .modall {
