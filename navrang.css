@@ -272,12 +272,12 @@ video {
   vertical-align: -0.200em;
 }
 
-.rounded-social-buttons {
+.rounded-socialll-buttons {
   text-align: center;
   margin-right: -115px;
 }
 
-.rounded-social-buttons .social-button {
+.rounded-socialll-buttons .socialll-button {
   display: inline-block;
   position: relative;
   cursor: pointer;
@@ -297,71 +297,71 @@ video {
   margin-bottom: 0.25rem;
 }
 
-.rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
+.rounded-socialll-buttons .socialll-button:hover, .rounded-socialll-buttons .socialll-button:focus {
   -webkit-transform: rotate(360deg);
       -ms-transform: rotate(360deg);
           transform: rotate(360deg);
 }
 
-.rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-tiktok, .fa-youtube, .fa-instagram {
+.rounded-socialll-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-tiktok, .fa-youtube, .fa-instagram {
   font-size: 25px;
 }
 
-.rounded-social-buttons .social-button.facebook {
+.rounded-socialll-buttons .social-button.facebook {
   background: #3b5998;
 }
 
-.rounded-social-buttons .social-button.facebook:hover, .rounded-social-buttons .social-button.facebook:focus {
+.rounded-socialll-buttons .socialll-button.facebook:hover, .rounded-socialll-buttons .socialll-button.facebook:focus {
   color: #3b5998;
   background: #fefefe;
   border-color: #3b5998;
 }
 
-.rounded-social-buttons .social-button.twitter {
+.rounded-socialll-buttons .socialll-button.twitter {
   background: #55acee;
 }
 
-.rounded-social-buttons .social-button.twitter:hover, .rounded-social-buttons .social-button.twitter:focus {
+.rounded-socialll-buttons .socialll-button.twitter:hover, .rounded-socialll-buttons .socialll-button.twitter:focus {
   color: #55acee;
   background: #fefefe;
   border-color: #55acee;
 }
 
-.rounded-social-buttons .social-button.linkedin {
+.rounded-socialll-buttons .socialll-button.linkedin {
   background: #007bb5;
 }
 
-.rounded-social-buttons .social-button.linkedin:hover, .rounded-social-buttons .social-button.linkedin:focus {
+.rounded-socialll-buttons .socialll-button.linkedin:hover, .rounded-socialll-buttons .socialll-button.linkedin:focus {
   color: #007bb5;
   background: #fefefe;
   border-color: #007bb5;
 }
 
-.rounded-social-buttons .social-button.tiktok {
+.rounded-socialll-buttons .socialll-button.tiktok {
   background: #000000;
 }
 
-.rounded-social-buttons .social-button.tiktok:hover, .rounded-social-buttons .social-button.tiktok:focus {
+.rounded-socialll-buttons .socialll-button.tiktok:hover, .rounded-socialll-buttons .socialll-button.tiktok:focus {
   color: #000000;
   background: #fefefe;
   border-color: #000000;
 }
 
-.rounded-social-buttons .social-button.youtube {
+.rounded-socialll-buttons .socialll-button.youtube {
   background: #bb0000;
 }
 
-.rounded-social-buttons .social-button.youtube:hover, .rounded-social-buttons .social-button.youtube:focus {
+.rounded-socialll-buttons .socialll-button.youtube:hover, .rounded-socialll-buttons .socialll-button.youtube:focus {
   color: #bb0000;
   background: #fefefe;
   border-color: #bb0000;
 }
 
-.rounded-social-buttons .social-button.instagram {
+.rounded-socialll-buttons .socialll-button.instagram {
   background: #125688;
 }
 
-.rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.instagram:focus {
+.rounded-socialll-buttons .socialll-button.instagram:hover, .rounded-socialll-buttons .socialll-button.instagram:focus {
   color: #125688;
   background: #fefefe;
   border-color: #125688;
