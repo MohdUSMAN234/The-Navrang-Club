@@ -244,7 +244,7 @@ video {
 }
 
 @media (max-width: 767px){
-  .rounded-social-buttons .social-button {
+  .rounded-socialll-buttons .socialll-button {
     display: inline-block;
     position: relative;
     cursor: pointer;
@@ -267,7 +267,6 @@ video {
   vertical-align: 0em;
 }
 }  
-
 .svg-inline--fa {
   vertical-align: -0.200em;
 }
