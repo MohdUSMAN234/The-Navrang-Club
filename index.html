@@ -128,6 +128,100 @@
       </script>
 
   </header>
+
+
+  
+  <div id="social-buttons">
+    <div class="social-button picture-of-month-button">
+      <img src="img/ph.png" alt="Picture of the Month" onclick="displayImage('img/blog2.webp')">
+      <span>Picture of the Month</span>
+    </div>
+    <div class="social-button call-button">
+      <img src="img/call.png" alt="Call">
+      <span>Call Us: 9569912921</span>
+    </div>
+    <div id="social-media-button" class="social-button social-media-button random-class-123">
+      <img src="img/social button img.png" alt="Social Media">
+      <span>Social Media</span>
+    </div>
+    <div class="social-media-overlay hidden" id="socialMediaOverlay">
+      <div class="social-media-icons">
+        <a href="https://www.instagram.com/navrang.psit/" class="socialll-button instagram" target="_blank"><i
+            class="fab fa-instagram fa-3x"></i></a>
+        <a class="socialll-button facebook" href="https://www.facebook.com/NAVRANG.PSIT/" target="_blank"><i
+            class="fab fa-facebook-f fa-3x"></i></a>
+        <a class="socialll-button twitter" href="https://twitter.com/navrangclub" target="_blank"><i
+            class="fab fa-twitter fa-3x"></i></a>
+        <a class="socialll-button linkedin" href="https://www.linkedin.com/in/navrang-psit/?originalSubdomain=in"
+          target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
+      </div>
+      <button class="close-button" id="closeButton">Close</button>
+    </div>
+
+    <script>
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var socialMediaButton = document.getElementById('social-media-button');
+        var socialMediaOverlay = document.getElementById('socialMediaOverlay');
+        var closeButton = document.getElementById('closeButton');
+
+        socialMediaButton.addEventListener("click", function () {
+          socialMediaOverlay.classList.remove('hidden'); // Display the overlay when the button is clicked
+        });
+
+        closeButton.addEventListener("click", function () {
+          socialMediaOverlay.classList.add('hidden'); // Hide the overlay when the close button is clicked
+        });
+      });
+
+
+
+    </script>
+
+
+    <div class="social-button faq-button">
+      <img src="img/faq.png" alt="FAQ">
+      <span>FAQ</span>
+    </div>
+  </div>
+
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="close-modal">&times;</span>
+      <img id="modal-image" src="" alt="Modal Image">
+    </div>
+  </div>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+      var modal = document.getElementById("modal");
+      var modalImage = document.getElementById("modal-image");
+      var closeButton = document.getElementById("close-modal");
+
+      var pictureOfMonthButton = document.querySelector(".picture-of-month-button");
+
+      pictureOfMonthButton.addEventListener("click", function () {
+        modal.style.display = "block";
+        modalImage.src = "img/photo of monthh.jpg"; // Change the image source accordingly
+      });
+
+      closeButton.addEventListener("click", function () {
+        modal.style.display = "none";
+      });
+
+      window.addEventListener("click", function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+    });
+
+
+  </script>
+
+
+
+
+  
   <button onclick="scrollToTop()" id="scrollToTopBtn" class="bounce-btn" title="Go to top">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
       <path fill="none" d="M0 0h24v24H0z" />
