@@ -296,6 +296,8 @@ video {
   transition: all 0.5s ease;
   margin-right: 0.25rem;
   margin-bottom: 0.25rem;
+  background: #3b5998;
+
 }
 
 .rounded-socialll-buttons .socialll-button:hover, .rounded-socialll-buttons .socialll-button:focus {
