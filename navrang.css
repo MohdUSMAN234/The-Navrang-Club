@@ -1278,7 +1278,7 @@ h2 {
 
 .contact-info p {
   margin: 10px 0;
-  color: #555;
+  color: #ffffff;
 }
 
 .contact-form input,
@@ -1290,6 +1290,14 @@ h2 {
   border-radius: 5px;
 }
 
+h2.cont{
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff;
+  margin-left: -37px;
+  padding: 21px 29px;
+
+}
 .contact-form textarea {
   height: 150px;
 }
