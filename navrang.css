@@ -2109,3 +2109,11 @@ body {
   border: 1px solid #ddd; /* Add a border for aesthetics */
   border-radius: 5px; /* Add some border radius for a softer look */
 }
+
+h2.cont {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+    margin-left: -37px;
+    padding: 21px 29px;
+}
