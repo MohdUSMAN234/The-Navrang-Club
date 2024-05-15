@@ -1254,8 +1254,6 @@ font-size: 2rem;
 
 #contact {
   padding: 50px 0;
-  background-color: #f9f9f9;
-/*   background:url(/img/yyy3.webp) no-repeat center center/cover; */
   background-color: #000000;
   object-fit: cover;
 
@@ -1317,6 +1315,9 @@ h2.cont{
 
 .contact-form .btn:hover {
   background-color: #0056b3;
+}
+section.video-sectionn {
+   background-color: #000000;
 }
 
 
