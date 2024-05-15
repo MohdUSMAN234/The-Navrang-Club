@@ -902,7 +902,7 @@
       </p>
     </div>
   </div>
-
+  
   <div id="modall-member4" class="modall modall-right">
     <div class="modall-content">
       <span class="close" onclick="hideModal('modall-member4')">&times;</span>
@@ -1150,34 +1150,41 @@
 
   </script>
 
-
   <section class="video-sectionn">
-    <h2>Featured Video</h2>
-    <div class="video-wrapperr">
-      <video controls>
-        <source src="video/video1.webm" type="video/mp4">
-      </video>
+    
+    <div class="instagram-posts">
+      <div class="instagram-post">
+          <!-- First Instagram Reel -->
+          <div class="reel-container">
+              <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C64D6EGyVYY/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+                  <!-- This div is for the reel image -->
+                  <div class="reel-image"></div>
+              </blockquote>
+          </div>
+      </div>
+      <div class="instagram-post">
+          <!-- Second Instagram Reel -->
+          <div class="reel-container">
+              <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C5jCEIjyOiT/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+                  <!-- This div is for the reel image -->
+                  <div class="reel-image"></div>
+              </blockquote>
+          </div>
+      </div>
+ 
+  <div class="instagram-post">
+    <!-- Third Instagram Reel -->
+    <div class="reel-container">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C5at8nYSs_7/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+            <!-- This div is for the reel image -->
+            <div class="reel-image"></div>
+        </blockquote>
     </div>
-  </section>
-  <div class="contain">
-    <div class="content">
-
-    </div>
-    <div class="sidebar" id="sticky-sidebar">
-      <!-- Sidebar content -->
-    </div>
-    <script>
-      window.addEventListener('scroll', function () {
-        var sidebar = document.getElementById('sticky-sidebar');
-        var sidebarTop = sidebar.getBoundingClientRect().top;
-
-        if (sidebarTop <= 20) {
-          sidebar.classList.add('sticky');
-        } else {
-          sidebar.classList.remove('sticky');
-        }
-      });
-    </script>
+</div>
+</div>
+</div>
+  <script async src="//www.instagram.com/embed.js"></script>
+</body>
 
   </div>
 
