@@ -11,6 +11,10 @@ body {
   color: #0077B5;
 }
 
+section.video-sectionn {
+display: flex; 
+}
+
 
 /* Style the main container for Instagram posts */
 .instagram-posts {
@@ -1345,9 +1349,6 @@ h2.cont{
 
 .contact-form .btn:hover {
   background-color: #0056b3;
-}
-section.video-sectionn {
-   background-color: #000000;
 }
 
 
