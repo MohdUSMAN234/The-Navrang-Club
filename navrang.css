@@ -17,6 +17,12 @@ section.video-sectionn {
     font-size: 1rem;
     
 }
+.video-sectionn {
+text-align: center;
+padding: 20px;
+font-size: 1rem;
+/* background-color: #000000; */
+}
 
 
 /* Style the main container for Instagram posts */
