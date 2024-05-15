@@ -11,6 +11,36 @@ body {
   color: #0077B5;
 }
 
+
+/* Style the main container for Instagram posts */
+.instagram-posts {
+  display: flex; /* Use flexbox to display items horizontally */
+  background-color: antiquewhite;
+}
+
+/* Style each individual Instagram post */
+.instagram-post {
+  margin: 20px; /* Add some space between posts */
+}
+
+/* Style the container for the reel */
+.reel-container {
+  max-width: 540px;
+  min-width: 326px;
+  width: 100%;
+}
+
+/* Style the reel image */
+.reel-image {
+  background-color: #FFF;
+  border-radius: 3px;
+  box-shadow: 0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15);
+  margin: 1px;
+  width: 100%;
+  height: auto; /* Adjust as needed */
+  max-width: 100%;
+}
+
 /* Example CSS for dark theme */
 .dark-theme {
   background-color:#000; /* Change this color to your dark theme color */
