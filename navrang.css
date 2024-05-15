@@ -13,7 +13,7 @@ body {
 
 /* Example CSS for dark theme */
 .dark-theme {
-  background-color: #333; /* Change this color to your dark theme color */
+  background-color:#000; /* Change this color to your dark theme color */
   color: #fff; /* Change text color for better readability */
 }
 
@@ -1322,7 +1322,7 @@ h2.cont{
 /* Add this CSS to hide member popup by default */
 
 #footer {
-  background-color: #333;
+  background-color: #000;
   color: #fff;
   padding: 50px 0;
 }
