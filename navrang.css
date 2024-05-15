@@ -28,7 +28,7 @@ font-size: 1rem;
 /* Style the main container for Instagram posts */
 .instagram-posts {
   display: flex; /* Use flexbox to display items horizontally */
-  background-color: antiquewhite;
+  background-color: #000;
 }
 
 /* Style each individual Instagram post */
