@@ -1302,7 +1302,7 @@ font-size: 2rem;
 
 #contact {
   padding: 50px 0;
-  background-color: #000000;
+   background:url(img/cont6.webp) no-repeat center center/cover;
   object-fit: cover;
 
 }
