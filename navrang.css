@@ -473,7 +473,7 @@ a.socialll-button.facebook {
 
 /* Animation for social icons */
 .social-icons {
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.5s ease;
 }
 
