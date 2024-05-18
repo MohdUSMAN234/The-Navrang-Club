@@ -46,6 +46,64 @@ body {
   transform: scaleX(1); /* Expand to full width */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
 }
+
+
+.blog-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 30px;
+}
+
+.blog-post {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-decoration: none; /* Remove default link styling */
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+}
+
+.blog-post img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.blog-content {
+  padding: 20px;
+}
+
+.blog-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.blog-content p {
+  color: #555;
+  margin-bottom: 15px;
+}
+.btnn {
+  display: block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: -11px;
+    margin-left: 25px;
+    /* margin-right: auto; */
+    margin-bottom: 22px;
+}
+
+.btnn:hover {
+  background-color: #0056b3;
+}
 h4 {
     /* background-color: gray; */
     color: gray;
