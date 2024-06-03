@@ -682,11 +682,9 @@ position: relative;
 }
 
 .logo img {
-  /* height: 50px; Adjust as needed */
-  
-      height: 52px;
-      margin-left: -99px;
-  
+    height: 50px;
+    margin-left: -175px;
+    margin-bottom: 12px;
 }
 .nav-link:hover{
   color:  #ccc;
