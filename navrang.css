@@ -21,6 +21,44 @@ body {
   object-fit: cover; /* Ensures the video covers the container */
   pointer-events: none; /* Disable pointer events so controls are not clickable */
 }
+#past-events {
+  margin-top: -16px;
+  background-color: black;
+}
+
+#past-events .container {
+  max-width: 1200px; /* Limit container width */
+}
+
+#past-events .gal {
+  font-size: 32px; /* Increase heading size */
+}
+
+#past-events .horizontal-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px 0; /* Add padding for better appearance */
+}
+
+#past-events .event-image {
+  flex: 0 0 auto;
+  margin-right: 20px; /* Add space between images */
+}
+
+#past-events .event-image img {
+  width: 300px; /* Increase width of past event images */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Add rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+#past-events .event-image img:hover {
+  transform: scale(1.05); /* Enlarge image on hover */
+}
+
+#past-events .event-image a {
+  display: block; /* Ensure whole image is clickable */
+}
 
 /* Hide video controls */
 video::-webkit-media-controls {
