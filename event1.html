@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Page</title>
+    <link rel="shortcut icon" type="x-icon" href="img/nav500.webp">
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212; /* Dark background */
+            color: #fff; /* Light text */
+            margin: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .event-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .event-info {
+            width: 60%; /* Adjust as needed */
+        }
+
+        .event-info h1 {
+            font-size: 32px; /* Larger font size */
+            margin-bottom: 20px; /* Increased bottom margin */
+            text-transform: uppercase; /* Uppercase text */
+            letter-spacing: 2px; /* Increased letter spacing */
+            font-weight: bold; /* Bold font weight */
+            color: #f39c12; /* Custom color for the Event Name */
+        }
+
+        .event-info p {
+            margin-bottom: 10px;
+        }
+
+        .event-poster {
+            width: 40%; /* Adjust as needed */
+        }
+
+        .event-poster img {
+            max-width: 71%;
+
+            height: auto;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Soft shadow */
+        }
+
+        .winners-section {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .winners-section h2 {
+            margin-bottom: 10px;
+        }
+
+        .winners-list {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .winner {
+            width: 45%;
+            background-color: #333; /* Dark background for winner cards */
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Soft shadow */
+            border-radius: 8px; /* Rounded corners */
+        }
+
+        .winner img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px; /* Rounded corners */
+            margin-bottom: 10px;
+        }
+
+        .winner h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .winner p {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        
+        .glimpse-section {
+            width: 100%;
+            margin-top: 20px;
+            position: relative; /* Add relative position */
+        }
+
+        .glimpse-photos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust column width */
+            grid-gap: 20px; /* Adjust gap between items */
+            position: relative; /* Add relative position */
+        }
+
+        .glimpse-photos img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Soft shadow */
+            cursor: pointer; /* Add cursor pointer */
+            transition: transform 0.3s ease; /* Add transition effect */
+        }
+
+        /* Add hover effect */
+        .glimpse-photos img:hover {
+            transform: scale(1.1); /* Scale up on hover */
+        }
+
+        /* Larger column for specific photos */
+        .special-photo {
+            grid-column: span 2; /* Span 2 columns */
+        }
+        .glimpse-photos video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Soft shadow */
+        }
+
+        /* Close button style */
+        .glimpse-photos img.enlarged {
+    transform: scale(1.1); /* Scale up */
+    z-index: 1; /* Ensure it's on top */
+    position: relative; /* Adjust position */
+}
+
+/* Close button style */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5em;
+    z-index: 2; /* Ensure it's on top */
+    transition: color 0.3s ease; /* Add transition effect */
+}
+
+        /* Change color of close button on hover */
+        .glimpse-photos:hover .close-button {
+            color: #fff;
+        }
+
+        /* Hidden class */
+        .hidden {
+            display: none;
+        }
+
+
+        .contestant-table {
+            flex: 1;
+    max-width: 50%;
+    margin-left: -719px;
+    margin-top: -401px;
+    margin-bottom: 29px;
+}
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    th, td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #000000;
+    }
+
+    td {
+        background-color: #000000;
+    }
+
+    tr:hover td {
+        background-color: #000000;
+    }
+
+    .download-link {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        color: #333;
+        background-color: #f2f2f2;
+        padding: 8px 12px;
+        border-radius: 5px;
+    }
+
+    .download-link:hover {
+        background-color: #ddd;
+    }
+
+    /* Add a media query for screens smaller than 600px */
+@media screen and (max-width: 600px) {
+    body {
+        margin: 10px; /* Adjust margin for smaller screens */
+    }
+
+    .container {
+        align-items: stretch; /* Stretch items vertically */
+    }
+
+    .event-details {
+        flex-direction: column; /* Stack event details vertically */
+        margin-bottom: 10px; /* Add some space between sections */
+    }
+
+    .event-info,
+    .event-poster {
+        width: 100%; /* Make both event info and poster full width */
+    }
+
+    .event-poster img {
+        max-width: 100%; /* Ensure images don't overflow */
+    }
+
+    .contestant-table {
+        margin-left: 0; /* Remove negative margin */
+        max-width: 100%; /* Make table full width */
+        overflow-x: auto; /* Add horizontal scroll if needed */
+        margin: auto;
+    }
+
+    .glimpse-photos {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust column width for smaller screens */
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="event-details">
+        <div class="event-info">
+            <h1>Danzeal</h1>
+            <p>Date: 29/04/2024</p>
+            <p>Location: J-37 (SH-2 | Seminar Hall-2)</p>
+        </div>
+        <div class="event-poster">
+            <img src="img/danzeal.jpg" alt="Event Poster">
+        </div>
+    </div>
+
+    <div class="contestant-table">
+        <h2>Contestants</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Branch</th>
+                    <th>Position</th>
+                    <th>Academic Year</th>
+                    <th>Download Certificate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Maniya Singh</td>
+                    <td>Cs 2B</td>
+                    <td>1st</td>
+                    <td>2023-2024</td>
+                    <td><a href="certificates/maniya_singh_certificate.pdf" download>Download</a></td>
+                </tr>
+                <tr>
+                    <td>Vaishnavi Srivastava</td>
+                    <td>IT-B</td>
+                    <td>Participation</td>
+                    <td>2023-2024</td>
+                    <td><a href="certificates/runner_up_1_certificate.pdf" download>Download</a></td>
+                </tr>
+                <tr>
+                    <td>Ananya Mishra</td>
+                    <td>CSAL 1A</td>
+                    <td>Participation</td>
+                    <td>2023-2024</td>
+                    <td><a href="certificates/runner_up_1_certificate.pdf" download>Download</a></td>
+                </tr>
+                <tr>
+                    <td>Ashutosh Mishra</td>
+                    <td>CS-AIML 1A</td>
+                    <td>Participation</td>
+                    <td>2023-2024</td>
+                    <td><a href="certificates/runner_up_1_certificate.pdf" download>Download</a></td>
+                </tr>
+                <tr>
+                    <td>Suriyansh Srivastava</td>
+                    <td>CS IOT 2B</td>
+                    <td>Runner Up</td>
+                    <td>2023-2024</td>
+                    <td><a href="certificates/runner_up_1_certificate.pdf" download>Download</a></td>
+                </tr>
+                <tr>
+                    <td>Angel Srivastava</td>
+                    <td>Btech</td>
+                    <td>Participation</td>
+                    <td>2023-2024</td>
+                    <td><a href="certificates/runner_up_1_certificate.pdf" download>Download</a></td>
+                </tr>
+                <tr>
+                    <td>Aishwarya Mishra</td>
+                    <td>CS-AIML-1A</td>
+                    <td>Participation</td>
+                    <td>2023-2024</td>
+                    <td><a href="certificates/runner_up_1_certificate.pdf" download>Download</a></td>
+                </tr>
+                <tr>
+                    <td>Ananya Dixit</td>
+                    <td>CS-2B</td>
+                    <td>Participation</td>
+                    <td>2023-2024</td>
+                    <td><a href="certificates/runner_up_1_certificate.pdf" download>Download</a></td>
+                </tr>
+                <tr>
+                    <td>Manya Singh</td>
+                    <td>CS AI 1B</td>
+                    <td>Participation</td>
+                    <td>2023-2024</td>
+                    <td><a href="certificates/runner_up_1_certificate.pdf" download>Download</a></td>
+                </tr>
+                <tr>
+                    <td>Anamika Gupta</td>
+                    <td>CS AI 1B</td>
+                    <td>Participation</td>
+                    <td>2023-2024</td>
+                    <td><a href="certificates/runner_up_1_certificate.pdf" download>Download</a></td>
+                </tr>
+                <!-- Add more contestants as needed -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="winners-section">
+        <h2>Winner & Runners-up</h2>
+        <div class="winners-list">
+            <div class="winner">
+                <h3>Maniya Singh</h3>
+                <p>Position: Winner</p>
+                <p>CS-AI I-B</p>
+            </div>
+            <div class="winner">
+                <h3>Suryansh Srivastava </h3>
+                <p>Position: Runner-up</p>
+                <P>CS-IOT II-B</P>
+            </div>
+            <!-- Add more winners and runners-up as needed -->
+        </div>
+    </div>
+
+    <div class="glimpse-section">
+        <h2>Glimpse of Event</h2>
+        <div class="glimpse-photos">
+            <img src="img/tune.webp" alt="Event Photo 1" >
+            <img src="img/danzeal.jpg" alt="Event Photo 2">
+            <img src="img/psit idol.webp" alt="Event Photo 3 ">
+            
+           
+            <img src="img/photo of monthh.jpg" alt="Event Photo 4">
+            <img src="img/psit idol.webp" alt="Event Photo 5">
+            
+            <!-- Add more event photos here -->
+        </div>
+        <button class="close-button hidden">X</button>
+        <script>
+         document.addEventListener('DOMContentLoaded', function () {
+    const photos = document.querySelectorAll('.glimpse-photos img');
+    const closeButton = document.querySelector('.close-button');
+
+    photos.forEach(photo => {
+        photo.addEventListener('click', function () {
+            // Toggle 'enlarged' class on the clicked photo
+            this.classList.toggle('enlarged');
+            // Toggle 'hidden' class on the close button
+            closeButton.classList.toggle('hidden');
+        });
+    });
+
+    // Close button event handler
+    if (closeButton) {
+        closeButton.addEventListener('click', function () {
+            // Remove 'enlarged' class from all photos
+            photos.forEach(photo => {
+                photo.classList.remove('enlarged');
+            });
+            // Hide close button
+            this.classList.add('hidden');
+        });
+    }
+});
+        </script>
+    </div>
+</div>
+
+</body>
+</html>
