@@ -5,6 +5,33 @@ body {
   overflow-x: hidden;
 }
 
+.horror-text{
+  font-family: 'Creepster', cursive;
+  font-size: 24px;
+  color: red; /* Adjust color as needed */
+  
+}
+@keyframes horror-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.horror-text {
+  font-size: 24px;
+  color: darkred; /* Adjust color as needed */
+}
+.horror-text {
+  font-size: 24px;
+  color: black; /* Text color */
+  text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red; /* Adjust shadow size and color */
+}
 .video-container {
   position: relative;
   width: 100%;
