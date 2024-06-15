@@ -26,6 +26,8 @@ body {
 .horror-text {
   font-size: 24px;
   color: darkred; /* Adjust color as needed */
+  display: inline-block;
+  animation: horror-animation 2s infinite alternate;
 }
 .horror-text {
   font-size: 24px;
