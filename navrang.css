@@ -380,6 +380,10 @@ background-color: #000000;
 }
 
 @media (max-width: 768px) {
+  /* Mobile styles */
+   body {
+    padding: 0;
+}
   label.theme-switch {
     display: none;
   }
