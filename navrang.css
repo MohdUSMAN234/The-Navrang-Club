@@ -5,6 +5,50 @@ body {
   overflow-x: hidden;
 }
 
+
+.event-banner {
+  display: none; /* Hide by default */
+  padding: 20px;
+  text-align: center;
+  background: url(img/Banner4.webp);
+  font-optical-sizing: auto;
+  background-size: contain;
+  height: 200px;
+}
+
+.event-banner h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-family: "Playfair Display", serif;
+}
+
+.event-banner p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.event-banner .btn {
+  display: none;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-top: 160px;
+}
+
+.event-banner .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+  .event-banner {
+    display: block; /* Show only on mobile */
+  }
+}
+
 .horror-text{
   font-family: 'Creepster', cursive;
   font-size: 24px;
