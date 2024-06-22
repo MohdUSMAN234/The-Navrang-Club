@@ -5,7 +5,7 @@ body {
   overflow-x: hidden;
 }
 
-.logo-buttonn {
+.nna {
   
     position: absolute;
       bottom: -43px;
@@ -19,33 +19,8 @@ body {
     transition: background-color 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-button#fileButton {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  transition: transform 0.2s, filter 0.2s;
-}
 
-button#fileButton img {
-  width: 50px;
-  height: 50px;
-}
-
-button#fileButton:hover {
-  filter: brightness(110%);
-  transform: scale(1.1);
-}
-
-button#fileButton:active {
-  transform: scale(0.9);
-}
-
-
-.logo-buttonn:hover {
+.nna:hover {
   background-color: #0056b3;
 }
 .event-banner {
