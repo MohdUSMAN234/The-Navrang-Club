@@ -52,7 +52,7 @@ button#fileButton:active {
   display: none; /* Hide by default */
   padding: 20px;
   text-align: center;
-  background: url(img/Banner4.webp);
+  background: url(img/Banner.webp);
   font-optical-sizing: auto;
   background-size: contain;
   height: 200px;
