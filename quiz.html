@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Money Heist Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('img/heist1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .quiz-container {
+            width: 100%;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .question:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            margin-top: 10px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .results {
+            text-align: center;
+            display: none;
+            margin-top: 20px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .results h2 {
+            margin-bottom: 15px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 20px;
+            font-size: 24px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .badge img {
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 600px) {
+            .quiz-container {
+                padding: 20px;
+            }
+
+            button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>The Ultimate Money Heist Quiz</h1>
+        
+        <div id="question1" class="question">
+            <h2>Question 1: What has keys but can't open locks?</h2>
+            <ul>
+                <li><button onclick="checkAnswer('question1', 'option1')">A. Piano</button></li>
+                <li><button onclick="checkAnswer('question1', 'option2')">B. Elephant</button></li>
+                <li><button onclick="checkAnswer('question1', 'option3')">C. Tree</button></li>
+                <li><button onclick="checkAnswer('question1', 'option4')">D. Boat</button></li>
+            </ul>
+        </div>
+        
+        <div id="question2" class="question" style="display: none;">
+            <h2>Question 2: What comes once in a minute, twice in a moment, but never in a thousand years?</h2>
+            <ul>
+                <li><button onclick="checkAnswer('question2', 'option1')">A. The letter 'M'</button></li>
+                <li><button onclick="checkAnswer('question2', 'option2')">B. Time</button></li>
+                <li><button onclick="checkAnswer('question2', 'option3')">C. Thought</button></li>
+                <li><button onclick="checkAnswer('question2', 'option4')">D. Opportunity</button></li>
+            </ul>
+        </div>
+        
+        <div id="question3" class="question" style="display: none;">
+            <h2>Question 3: What has a head, a tail, but no body?</h2>
+            <ul>
+                <li><button onclick="checkAnswer('question3', 'option1')">A. Snake</button></li>
+                <li><button onclick="checkAnswer('question3', 'option2')">B. Coin</button></li>
+                <li><button onclick="checkAnswer('question3', 'option3')">C. Comet</button></li>
+                <li><button onclick="checkAnswer('question3', 'option4')">D. Moon</button></li>
+            </ul>
+        </div>
+        
+        <div id="question4" class="question" style="display: none;">
+            <h2>Question 4: What can travel around the world while staying in a corner?</h2>
+            <ul>
+                <li><button onclick="checkAnswer('question4', 'option1')">A. Stamp</button></li>
+                <li><button onclick="checkAnswer('question4', 'option2')">B. Globe</button></li>
+                <li><button onclick="checkAnswer('question4', 'option3')">C. Airplane</button></li>
+                <li><button onclick="checkAnswer('question4', 'option4')">D. Earthworm</button></li>
+            </ul>
+        </div>
+        
+        <div id="question5" class="question" style="display: none;">
+            <h2>Question 5: What has cities, but no houses; forests, but no trees; and rivers, but no water?</h2>
+            <ul>
+                <li><button onclick="checkAnswer('question5', 'option1')">A. Map</button></li>
+                <li><button onclick="checkAnswer('question5', 'option2')">B. Atlas</button></li>
+                <li><button onclick="checkAnswer('question5', 'option3')">C. Globe</button></li>
+                <li><button onclick="checkAnswer('question5', 'option4')">D. Puzzle</button></li>
+            </ul>
+        </div>
+
+        <div id="results" class="results">
+            <h2>Your Results</h2>
+            <p id="score">Score: <span id="score-value">0</span></p>
+        </div>
+
+        <!-- Canvas for screenshot -->
+        <canvas id="screenshotCanvas" style="display: none;"></canvas>
+    </div>
+
+    <script>
+        let score = 0;
+        let currentQuestion = 0; // Updated to start from 0
+        
+        // Array of questions with options and correctIndex
+        const questions = [
+            {
+                question: "What has keys but can't open locks?",
+                options: ["A. Piano", "B. Elephant", "C. Tree", "D. Boat"],
+                correctIndex: 0
+            },
+            {
+                question: "What comes once in a minute, twice in a moment, but never in a thousand years?",
+                options: ["A. The letter 'M'", "B. Time", "C. Thought", "D. Opportunity"],
+                correctIndex: 2
+            },
+            {
+                question: "What has a head, a tail, but no body?",
+                options: ["A. Snake", "B. Coin", "C. Comet", "D. Moon"],
+                correctIndex: 1
+            },
+            {
+                question: "What can travel around the world while staying in a corner?",
+                options: ["A. Stamp", "B. Globe", "C. Airplane", "D. Earthworm"],
+                correctIndex: 3
+            },
+            {
+                question: "What has cities, but no houses; forests, but no trees; and rivers, but no water?",
+                options: ["A. Map", "B. Atlas", "C. Globe", "D. Puzzle"],
+                correctIndex: 2
+            }
+        ];
+
+        // Function to display a question
+        function displayQuestion() {
+            if (currentQuestion < questions.length) {
+                const questionData = questions[currentQuestion];
+                const questionElement = document.getElementById('question' + (currentQuestion + 1));
+
+                if (questionElement) {
+                    // Set question text
+                    questionElement.querySelector('h2').textContent = `Question ${currentQuestion + 1}: ${questionData.question}`;
+
+                    // Update button texts with shuffled options
+                    const buttons = questionElement.querySelectorAll('button');
+                    for (let i = 0; i < buttons.length; i++) {
+                        buttons[i].textContent = questionData.options[i];
+                        buttons[i].setAttribute('onclick', `checkAnswer('question${currentQuestion + 1}', 'option${i + 1}')`);
+                    }
+
+                    // Display the question
+                    questionElement.style.display = 'block';
+                }
+            } else {
+                // No more questions, show results
+                showResults();
+            }
+        }
+
+        // Function to check the selected answer
+        function checkAnswer(questionId, selectedOption) {
+            const questionIndex = parseInt(questionId.replace('question', '')) - 1;
+            const questionData = questions[questionIndex];
+            const correctOption = `option${questionData.correctIndex + 1}`;
+
+            if (selectedOption === correctOption) {
+                score++;
+            }
+
+            // Hide current question
+            document.getElementById(questionId).style.display = 'none';
+
+            // Move to the next question
+            currentQuestion++;
+
+            // Display next question or results
+            displayQuestion();
+        }
+
+        // Function to display results
+        function showResults() {
+            const resultsSection = document.getElementById('results');
+            resultsSection.style.display = 'block';
+            document.getElementById('score-value').textContent = score;
+
+            // Optional: Add a badge for full score
+            if (score === questions.length) {
+                const badgeElement = document.createElement('div');
+                badgeElement.classList.add('badge');
+                badgeElement.textContent = "Mastermind of the Mint"; // Replace with your desired text
+                resultsSection.appendChild(badgeElement);
+            }
+        }
+
+        // Start the quiz
+        displayQuestion();
+    </script>
+</body>
+</html>
