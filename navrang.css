@@ -6,11 +6,53 @@ body {
 }
 
 
+button#fileButton {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+button#fileButton img {
+  width: 50px;
+  height: 50px;
+}
+
+button#fileButton:hover {
+  filter: brightness(110%);
+  transform: scale(1.1);
+}
+
+button#fileButton:active {
+  transform: scale(0.9);
+}
+
+.logo-button {
+  position: absolute;
+  bottom: 20px;
+  left: 133px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-button:hover {
+  background-color: #0056b3;
+}
 .event-banner {
   display: none; /* Hide by default */
   padding: 20px;
   text-align: center;
-  background: url(img/Banner.webp);
+  background: url(img/Banner4.webp);
   font-optical-sizing: auto;
   background-size: contain;
   height: 200px;
