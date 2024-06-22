@@ -5,7 +5,20 @@ body {
   overflow-x: hidden;
 }
 
-
+a.logo-button {
+  
+    position: absolute;
+    bottom: 20px;
+    left: 133px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 button#fileButton {
   position: fixed;
   right: 20px;
