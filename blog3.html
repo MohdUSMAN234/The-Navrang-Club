@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="shortcut icon" type="x-icon" href="img/nav500.webp">
+  <title>President's Message</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #222;
+      color: #fff;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+      background: linear-gradient(to right, #333, #444);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .content:hover {
+      transform: translateY(-5px);
+    }
+
+    .image {
+      flex: 1;
+      padding: 20px;
+      border: 2px solid #ffcc00;
+      border-radius: 10px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+    }
+
+    h1 {
+      color: #ffcc00;
+      margin-bottom: 20px;
+      animation: slideIn 1s ease forwards;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .signature {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* Animation */
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .container {
+        flex-direction: column;
+        align-items: flex-start;
+        /* Adjust alignment */
+      }
+
+      .image {
+        flex: 1;
+        margin-bottom: 20px;
+        /* Add margin to separate from content */
+      }
+
+      .content {
+        flex: 1;
+      }
+    }
+
+    .home-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #ffcc00;
+      color: #222;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      z-index: 9999;
+    }
+
+    .home-button:hover {
+      background-color: #fff;
+      color: #222;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <h1> A Journey Beyond Academics: The Vibrant Culture of PSIT Kanpu</h1>
+      <p>Being a student of Pranveer Singh Institute of Technology (PSIT) Kanpur, I have 
+realized the vibrant cultural diversity that accompanies our successful academic life. 
+Music, dance, art, and drama float in the air and act as our playground where we can 
+always develop any talents in these fields.</p>
+<p>Perhaps one of the most diverse and colourful of them all is IGNITIA – the annual 
+youth festival of PSIT. IGNITIA is a splendid fusion of technical and cultural activities 
+that provide a platform to us to perform and at the same time, develop group 
+harmony and unity.</p>
+<p>Apart from the cultural events, PSIT has other facilities that are equipped with 
+contemporary infrastructure that can support both the artistic and the academic 
+needs of the students. The classrooms, functional laboratories, and other 
+recreational places makes our college to be well equipped in that it facilitates 
+learning and innovation.</p>
+<p>At NAVRANG CLUB, we foster a vibrant campus experience by organizing numerous 
+performing arts and cultural activities, uniting people from diverse backgrounds, 
+interests, and ethnicities to stimulate lifelong learning and community engagement.
+However, the most precious thing about PSIT is our helpful teachers. Let me restate 
+that our teachers are not only well-trained professionals, but also passionate about 
+our achievement. They are like teachers and guide us and make us comfortable to 
+grow in every aspect, be it academic or artistic.</p>
+<p>Therefore, the PSIT Kanpur is not merely an institution where we gain knowledge; it is 
+a society where we are moulded and trained for the future with a flourishing culture 
+of togetherness. This journey at PSIT has been diverse academically and personally, 
+and the pulsating culture at the college makes it rather special</p>
+
+
+      <p class="signature">Follow me on Instagram</p>
+    </div>
+    <div class="image">
+      <img src="img/blog 6.jpeg" alt="President Prakhar Srivastava">
+    </div>
+    <button class="home-button" onclick="goToHomePage()">Home</button>
+
+    <script>
+      function goToHomePage() {
+        // Replace the URL with the actual home page URL
+        window.location.href = "index.html";
+      }
+    </script>
+    
+</body>
+
+</html>
