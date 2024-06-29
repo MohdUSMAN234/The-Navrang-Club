@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    /* CSS Variables for easy customization */
+:root {
+    --primary-color: #ff7e5f;
+    --secondary-color: #feb47b;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --header-font-size: 3rem;
+    --article-border-radius: 10px;
+    --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --box-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.2);
+    --transition-speed: 0.3s;
+}
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: var(--box-shadow-light);
+}
+
+h1 {
+    margin: 0;
+    font-size: var(--header-font-size);
+    font-weight: 700;
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.blog-post {
+    background: #fff;
+    padding: 2rem;
+    border-radius: var(--article-border-radius);
+    box-shadow: var(--box-shadow-light);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    flex: 1 1 300px;
+    max-width: 400px;
+}
+
+.blog-post:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.blog-post h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.blog-post p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    color: #fff;
+    background: var(--primary-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.read-more:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    .blog-post {
+        padding: 1.5rem;
+    }
+    .read-more {
+        padding: 0.5rem 1rem;
+    }
+}
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .blog-post h2 {
+        font-size: 1.5rem;
+    }
+    .blog-post p {
+        font-size: 0.9rem;
+    }
+    .read-more {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Existing CSS */
+
+.search-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#search-box {
+    width: 100%;
+    max-width: 600px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow-light);
+}
+
+.blog-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+
+/* Media Queries for Responsiveness */
+/* (existing media queries) */
+
+</style>
+<body>
+    <header>
+        <h1>Navrang Blogs</h1>
+    </header>
+    <main>
+        <div class="search-container">
+            <input type="text" id="search-box" placeholder="Search for a blog post...">
+        </div>
+        <script>
+           document.addEventListener('DOMContentLoaded', () => {
+    const searchBox = document.getElementById('search-box');
+    const blogContainer = document.getElementById('blog-container');
+    const blogPosts = Array.from(blogContainer.getElementsByClassName('blog-post'));
+
+    searchBox.addEventListener('input', () => {
+        const query = searchBox.value.toLowerCase();
+
+        // Filter and sort posts based on the search query
+        const filteredPosts = blogPosts
+            .map(post => ({
+                element: post,
+                title: post.querySelector('.blog-title').textContent.toLowerCase(),
+            }))
+            .sort((a, b) => {
+                const aMatch = a.title.includes(query);
+                const bMatch = b.title.includes(query);
+
+                if (aMatch && !bMatch) return -1;
+                if (!aMatch && bMatch) return 1;
+                return 0;
+            });
+
+        // Clear the container and append sorted posts
+        blogContainer.innerHTML = '';
+        filteredPosts.forEach(post => blogContainer.appendChild(post.element));
+    });
+});
+
+
+
+        </script>
+         <section class="blog-container" id="blog-container">
+            <article class="blog-post">
+                <img src="img/blog2.webp" alt="Blog Post Image 1" class="blog-image">
+                <h2 class="blog-title">President's Farewell Speech</h2>
+                <p>It has been my honor to host the vibrant, special, and enthusiastic cultural events of
+                    The Navrang Club..</p>
+                <a href="blog.html" class="read-more">Read More</a>
+            </article>
+            <article class="blog-post">
+                <img src="img/blog5.webp" alt="Blog Post Image 1" class="blog-image">
+                <h2 class="blog-title">A Note from the Vice President</h2>
+                <p>As Vice President, I pledge to uphold the values of inclusivity, respect, and unity that
+                    define our club..</p>
+                <a href="blog2.html" class="read-more">Read More</a>
+            </article>
+            <article class="blog-post">
+                <img src="img/blog 6.jpeg" alt="Blog Post Image 1" class="blog-image">
+                <h2 class="blog-title">A Journey Beyond Academics: The Vibrant Culture of PSIT Kanpur</h2>
+                <p>Being a student of Pranveer Singh Institute of Technology (PSIT) Kanpur, I have 
+                    realized the vibrant cultural..</p>
+                <a href="blog3.html" class="read-more">Read More</a>
+            </article>
+            <article class="blog-post">
+                <img src="img/blog7.jpeg" alt="Blog Post Image 1" class="blog-image">
+                <h2 class="blog-title">Importance of Cutural Activities in 
+                    Technical Studies</h2>
+                <p>Previously, collegelife used to be lectures 
+                    and attendance. Now, student's ..</p>
+                <a href="blog4.html" class="read-more">Read More</a>
+            </article>
+            <article class="blog-post">
+                <img src="img/blog 4.jpeg" alt="Blog Post Image 1" class="blog-image">
+                <h2 class="blog-title">Navrang in PSIT</h2>
+                <p>If you’ve ever stepped foot on the campus of Pranveer Singh Institute of Technology (PSIT), you’ve..</p>
+                <a href="blog5.html" class="read-more">Read More</a>
+            </article>
+            
+            <!-- Add more blog posts as needed -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 || Navrang Blogs|| All rights reserved.</p>
+    </footer>
+</body>
+</html>
