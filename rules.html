@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Rules</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+/* Base styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styles */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Heading styles */
+h1 {
+    text-align: center;
+    color: #007BFF;
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #007BFF;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/* List styles */
+ol {
+    padding-left: 40px;
+    list-style: none;  /* Suppress default list numbering */
+    counter-reset: rule-counter;
+}
+
+ol li {
+    margin: 15px 0;
+    padding: 20px 25px;
+    background: #f9f9f9;
+    border-left: 5px solid #007BFF;
+    border-radius: 5px;
+    font-size: 1.3em;
+    position: relative;
+    counter-increment: rule-counter;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+ol li:before {
+    content: counter(rule-counter) ".";
+    position: absolute;
+    left: -45px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #007BFF;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+ol li:hover {
+    background-color: #e9f4ff;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    ol li {
+        font-size: 1.1em;
+        padding: 15px 20px;
+    }
+
+    ol li:before {
+        left: -35px;
+        font-size: 1.3em;
+    }
+}
+
+/* Keyframe animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+</style>
+<body>
+    <div class="container">
+        <h1>Event Rules</h1>
+        <ol>
+            <li>Be respectful to all participants and staff.</li>
+            <li>Follow all instructions given by the event organizers.</li>
+            <li>No outside food or drinks are allowed.</li>
+            <li>Maintain cleanliness and dispose of trash in designated areas.</li>
+            <li>Report any issues or emergencies to the event staff immediately.</li>
+            <li>No disruptive behavior will be tolerated.</li>
+            <li>Ensure all personal belongings are secure; the event organizers are not responsible for lost items.</li>
+            <li>Photography and video recording are allowed, but please be mindful of others' privacy.</li>
+        </ol>
+    </div>
+</body>
+</html>
