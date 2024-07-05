@@ -2409,6 +2409,9 @@ nav ul {
     margin-left: 44px;
     display: flex;
 }
+  form.contact-form {
+  display: inline-grid;
+}
 .logo img {
   height: 52px;
   margin-left: -154px;
