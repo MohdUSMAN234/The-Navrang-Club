@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Page</title>
+    <link rel="shortcut icon" type="x-icon" href="img/nav500.webp">
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212; /* Dark background */
+            color: #fff; /* Light text */
+            margin: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .event-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            margin-left: -28px;
+        }
+
+        .event-info {
+            width: 60%; /* Adjust as needed */
+        }
+
+        .event-info h1 {
+            font-size: 32px; /* Larger font size */
+            margin-bottom: 20px; /* Increased bottom margin */
+            text-transform: uppercase; /* Uppercase text */
+            letter-spacing: 2px; /* Increased letter spacing */
+            font-weight: bold; /* Bold font weight */
+            color: #f39c12; /* Custom color for the Event Name */
+        }
+
+        .event-info p {
+            margin-bottom: 10px;
+        }
+
+        .event-poster {
+            width: 40%; /* Adjust as needed */
+            margin-left: 214px;
+        }
+
+        .event-poster img {
+            max-width: 71%;
+
+            height: auto;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Soft shadow */
+        }
+
+        .winners-section {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .winners-section h2 {
+            margin-bottom: 10px;
+        }
+
+        .winners-list {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .winner {
+            width: 45%;
+            background-color: #333; /* Dark background for winner cards */
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Soft shadow */
+            border-radius: 8px; /* Rounded corners */
+        }
+
+        .winner img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px; /* Rounded corners */
+            margin-bottom: 10px;
+        }
+
+        .winner h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .winner p {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        
+        .glimpse-section {
+            width: 100%;
+            margin-top: 20px;
+            position: relative; /* Add relative position */
+        }
+
+        .glimpse-photos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust column width */
+            grid-gap: 20px; /* Adjust gap between items */
+            position: relative; /* Add relative position */
+        }
+
+        .glimpse-photos img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Soft shadow */
+            cursor: pointer; /* Add cursor pointer */
+            transition: transform 0.3s ease; /* Add transition effect */
+        }
+
+        /* Add hover effect */
+        .glimpse-photos img:hover {
+            transform: scale(1.1); /* Scale up on hover */
+        }
+
+        /* Larger column for specific photos */
+        .special-photo {
+            grid-column: span 2; /* Span 2 columns */
+        }
+        .glimpse-photos video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Soft shadow */
+        }
+
+        /* Close button style */
+        .glimpse-photos img.enlarged {
+    transform: scale(1.1); /* Scale up */
+    z-index: 1; /* Ensure it's on top */
+    position: relative; /* Adjust position */
+}
+
+/* Close button style */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5em;
+    z-index: 2; /* Ensure it's on top */
+    transition: color 0.3s ease; /* Add transition effect */
+}
+
+        /* Change color of close button on hover */
+        .glimpse-photos:hover .close-button {
+            color: #fff;
+        }
+
+        /* Hidden class */
+        .hidden {
+            display: none;
+        }
+
+
+        .contestant-table {
+            flex: 1;
+    max-width: 50%;
+    margin-left: -719px;
+    margin-top: -366px;
+    margin-bottom: 29px;
+}
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    th, td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #000000;
+    }
+
+    td {
+        background-color: #000000;
+    }
+
+    tr:hover td {
+        background-color: #000000;
+    }
+
+    .download-link {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        color: #333;
+        background-color: #f2f2f2;
+        padding: 8px 12px;
+        border-radius: 5px;
+    }
+
+    .download-link:hover {
+        background-color: #ddd;
+    }
+
+    /* Add a media query for screens smaller than 600px */
+@media screen and (max-width: 600px) {
+    body {
+        margin: 10px; /* Adjust margin for smaller screens */
+    }
+
+    .container {
+        align-items: stretch; /* Stretch items vertically */
+    }
+
+    .event-details {
+        flex-direction: column; /* Stack event details vertically */
+        margin-bottom: 10px; /* Add some space between sections */
+    }
+
+    .event-info,
+    .event-poster {
+        width: 100%; /* Make both event info and poster full width */
+    }
+
+    .event-poster img {
+        max-width: 100%; /* Ensure images don't overflow */
+    }
+
+    .contestant-table {
+        margin-left: 0; /* Remove negative margin */
+        max-width: 100%; /* Make table full width */
+        overflow-x: auto; /* Add horizontal scroll if needed */
+        margin: auto;
+    }
+
+    .glimpse-photos {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust column width for smaller screens */
+    }
+    .event-info p {
+            margin-bottom: 10px;
+        }
+
+        .event-poster {
+            width: 40%; /* Adjust as needed */
+        }
+
+        .event-poster img {
+        max-width: 208%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        margin-left: -152px;
+    }
+        .event-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .event-poster {
+            width: 40%; /* Adjust as needed */
+        }
+
+}
+
+/* CSS for Event Photos section */
+.event-photos {
+    margin-bottom: 20px; /* Add some bottom margin */
+    padding: 20px; /* Add padding for better spacing */
+    background-color: #333; /* Dark background */
+    color: #fff; /* Light text */
+    border-radius: 8px; /* Rounded corners */
+    animation: colorChange 8s infinite alternate; /* Apply animation */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Animation for color change */
+@keyframes colorChange {
+    0% { background-color: #333; color: #fff; } /* Initial colors */
+    50% { background-color: #222; color: #ff7e5f; } /* Midpoint colors */
+    100% { background-color: #333; color: #fff; } /* Return to initial colors */
+}
+
+/* Hover effect for interactive experience */
+.event-photos:hover {
+    transform: translateY(-5px); /* Move the element up slightly on hover */
+}
+
+.event-photos h2 {
+    font-size: 24px; /* Font size for heading */
+    margin-bottom: 10px; /* Add some bottom margin */
+    text-align: left; /* Align heading to the left */
+}
+
+.event-photos p {
+    font-size: 16px; /* Font size for paragraph */
+    text-align: left; /* Align text to the left */
+}
+
+/* Media query for screens smaller than 600px */
+@media screen and (max-width: 600px) {
+    .event-photos h2 {
+        font-size: 20px; /* Decrease font size for smaller screens */
+    }
+
+    .event-photos p {
+        font-size: 14px; /* Decrease font size for smaller screens */
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="event-details">
+        <div class="event-info">
+            <h1>Treasure Hunt</h1>
+            <p>Date: 4th July,2024</p>
+            <p>Location: G-Block</p>
+        </div>
+        <div class="event-poster">
+            <img src="img/Money (1).webp" alt="Event Poster">
+        </div>
+    </div>
+
+    <div class="contestant-table">
+        <h2>Contestants</h2>
+       
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Branch</th>
+            <th>Position</th>
+            <th>Academic Year</th>
+            <th>Download Certificate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Divyanshu</td>
+            <td>B.Tech CS</td>
+            <td>1st</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1RHUGsKjoHn2pCQh8iT_Da7QpPR-FlQw0/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Shubhra Singh </td>
+            <td>CS-DS 2B</td>
+            <td>1st</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/11KIqgyqPUxB488SzmUL0t0TShz1eQVT1/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+
+        <tr>
+            <td>Swarnima Gupta</td>
+            <td>CS-AIML-2C </td>
+            <td>1st</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1BKykd7f9ntBXucKSOeUI_lO5SE9SZm27/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Neschal singh</td>
+            <td>CS AIML 2B</td>
+            <td>1st</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1Rbk25tegs9WrUnvAU3mmwV9pkUYRx_Yy/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Prajjwal Singh </td>
+            <td>CS-AIML 2-B</td>
+            <td>1st</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1G2NPnucM0VCl9eIO5c6KeeaYC3-X-22I/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Ujjwal Singh</td>
+            <td>CS-AIML-2C</td>
+            <td>1st</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1G2NPnucM0VCl9eIO5c6KeeaYC3-X-22I/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Harsh Yadav</td>
+            <td>MBA 1-B</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/15fxZ848xFsMw-LtOTo9PHy-w-Xuq7bCy/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Tanay Singh</td>
+            <td>MBA 1E </td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1kgYmymN3kWzjKEYhTZweMf1f0iZ8DQPf/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Syed Mohd Asim </td>
+            <td>CS DS-1 </td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/19w__27exXE0-GlnUaPPwftc-4OJqHfpI/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Mohd Rahman</td>
+            <td>EC 2024 1B</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1Y5JfCYDrq2GsvyL86dn9bPn7lEfAWQVD/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Vishal kumar sharma </td>
+            <td>CS-DS</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1yWD6_dH9qRX1SnGHXWxcQNuO6qjoV6iQ/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Simran Oberoi </td>
+            <td>AIDS-2-A</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1yWD6_dH9qRX1SnGHXWxcQNuO6qjoV6iQ/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Rounak Tripathi</td>
+            <td>CS 2A</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/10_Fvx34TIY-WWSVz9E-o3azyyaIjAUOi/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Krishnanshu Agrawal</td>
+            <td>ELITE-II</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/17LGK3UX1MPrbGGoZIXpfsNnHAkNBfzks/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Sajal Srivastava </td>
+            <td>CS-AIML ELITE</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/16HaxDBGlnVpl6axBcVsgnWo44V9AP58Q/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Vandna Shukla </td>
+            <td>CS-AIML-ELITE-2</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1CHhFTfLX9V5SPFrViWzbp5CZO2c0XMSZ/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Aman Shukla </td>
+            <td>CS-AI-1A</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1cQslU2unAPUN3k15X2QLvcYZo7CC-_qd/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Rozy nigam</td>
+            <td>MBA 1 D</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1kjvwUD2bwqirW84ObwNdcjgRIg8qnBpA/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Harpreet Singh Arora </td>
+            <td>MBA - I - B</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1Lh6seuunffM5t1onZT-W5yaLFmimDTwB/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Abhay Singh</td>
+            <td>EC-2A</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1qRoLo0M4GtXAGnZHN0XiRaQenbpgg-O7/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Divyanka Chaturvedi</td>
+            <td>CS -2F</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1IYhFtUReOSXwXJWCYiTQKhmWUWan3YKa/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+       
+        <tr>
+            <td>Alok Pal</td>
+            <td>CS-AI-1A </td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1dqhhBNau4a987PhZJgYT7zXPYWM8VQ4D/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>anushka nath</td>
+            <td>EC-2A</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1U6veG29HZZ0V8ZbI4b0vE0CkJICmyPNO/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Tanu Sharma </td>
+            <td>MBA-1-E</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1vmGpo7aJP8cdRE2jmi1EMwdP23j88hbq/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Shafaq Ali Siddiqui </td>
+            <td>CS-CYS-1B</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/11McP8IWb4t27V1B3xxY9ZkkZnGzzhoQD/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Zaid ali</td>
+            <td>CS -IOT-2B</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1dqu3P6fzw7x6Yc1RwoWGEZA9l30sHbcx/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Aakansh dixit </td>
+            <td>CS-AI-1A</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1nC712wI5SJ9tbN_27R65URZPuUgZMTq7/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Shambhavi Dixit</td>
+            <td>MBA-I-D</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1ks_eu6yNOLtavZ9FiW9NsdPLpzqNRzf7/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Muskan Mishra</td>
+            <td>CS-1E</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1OiBT3Gf2BgpqsC-mT72-o-3o95-U4nq0/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Ankur Saxena </td>
+            <td>Ece-2A/td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1TpBFBRHLiQm4mkQJFdJFzyfiJ1Dm11Np/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Swarnim Shukla </td>
+            <td>CS-IOT-1B </td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1JXqhhmlfrofk4lgngVxbXFR2zNpCroei/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Tanvi Pandey </td>
+            <td>CS AI 1-C </td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1V5LwemPDDVcFBKxJYPX3YvW-Vq_l20qs/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Vedansh Prakash Gupta </td>
+            <td>AIDS-1st-A</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1L_ZzvTsx8N73KgidX1jwmK1cQd-mBhO5/view?usp=sharing"  download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Dhruv Garg</td>
+            <td>CS-DS-1B</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1p8-PGyeJLmMPhFjX5jeygK5EYflXNqpK/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Shikhar Shukla </td>
+            <td>CS-AIML-2C</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1B_THBwUw2_RfQmR3Il15M-Ryn0eavZeX/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Suryansh singh </td>
+            <td>Cs-cys-1c</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1qfQmdqfyqcOSBEdzB2Bejrw-hMBUgd7a/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Karan Verma </td>
+            <td>CS-CYS-2A</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1NwpnXou9RsDe64qom6meBwvuW7NYUc6y/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Ayush Mishra </td>
+            <td>CS-CYS-2A</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1iJNpr2vxgKqi5DyzBWjwmet2uY-xNjRQ/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Harsh Srivastava </td>
+            <td>CS-CYS-2A</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1oC10QBmUoAGFMSSRcjEL0nem39RrFvJi/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Vanshika Mishra /td>
+            <td>CS-IOT-1B</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1aW8y8TcfUhv8QkoeRZnXTEI_cYtFfOiK/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Reeti srivastava </td>
+            <td>B.Tech CS</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1l9W3kE9S4naXdFYceTcLGrdbktjKv_yI/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Aditya Saini</td>
+            <td>CS-CYS-2A</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1lZPeGutllrTArMizS9666abByNnlh-iT/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Utkarsh Gupta</td>
+            <td>CS-DS-1-D</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1c09JH8gAqJ0bvhAl0AQqfamm7N0auRmj/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Tanzeelah Fareed</td>
+            <td>CS-AIML-2C</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1Y5JfCYDrq2GsvyL86dn9bPn7lEfAWQVD/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Aryan</td>
+            <td>CS DS 1A </td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/15FiKu1v-pRduq-XaFr4kf_vYod1D4eWO/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Arnav Tiwari </td>
+            <td>CS DS 1A </td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1mdIV4bxztGFdjRBd23qqKm2Sa4-M08vA/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Chaman Bhardwaj</td>
+            <td>CSE- 1C</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1787WzmInE48VfYWdAD8fXjrsl4rtLUt5/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Deepak Kanojiya</td>
+            <td>CS-1-C</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1cY0BYQoGlRduhc4KtM1_euz_zgsyczBw/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Prasidhi Agarwal </td>
+            <td>CS-1-E</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1sfFdt6SWWCAcR2BdkgVz9fwUQIQ8p_vn/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Anmol Gupta </td>
+            <td>CS DS 1A </td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1MgNhtM9dDKPejCGwVbSQxxy0jtC-xOga/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Ansh Soni</td>
+            <td>CS DS 1A </td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1GjaVsKWAkIluPSe3F6mELsgFdt8yrUa5/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Arnav Tiwari</td>
+            <td>CS DS 1A </td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1i4APRmpxcSTOWvRNwrB7v7P3V__P0_Bz/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Shubh Mishra </td>
+            <td>CS CYS -1B</td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1AAmzkyea03WtTGi5f0T_ZeSOVKbcbpOt/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+        <tr>
+            <td>Aryan</td>
+            <td>CS DS 1A </td>
+            <td>Participated</td>
+            <td>2023-2024</td>
+            <td><a href="https://drive.google.com/file/d/1aVxIKZ1yGk5PA1_asbUml4-g38xQpVQd/view?usp=sharing" download><img src="img/pdf-3385.webp" alt="Download PDF" width="20" height="20"></a></td>
+        </tr>
+       
+       
+        <!-- Add more contestants as needed -->
+    </tbody>
+</table>
+    </div>
+
+    <div class="winners-section">
+        <h2>Winner & Runners-up</h2>
+        <div class="winners-list">
+            <div class="winner">
+                <h3>Team Lucknow</h3>
+                <p>Position: Winner</p>
+                <!-- <p>CS-AI-1C </p> -->
+            </div>
+            <!-- <div class="winner">
+                <h3>Vaishnavi Srivastava</h3>
+                <p>Position: Runner-up</p>
+                <P>IT-1B</P>
+            </div> -->
+            <!-- Add more winners and runners-up as needed -->
+        </div>
+    </div>
+    <div class="event-photos">
+        <h2>Event Photos</h2>
+        <p>View more event photos <a href="https://drive.google.com/drive/folders/1F4uIFrvWbJfiZoT_pqNfL2ClAZsZ4jyf" target="_blank" rel="noopener noreferrer"><img src="img/icon2.webp" alt="Download PDF" width="40" height="40"></a></p>
+    </div>
+
+</body>
+</html>
