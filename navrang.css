@@ -123,10 +123,10 @@ a.cta-btn.quiz-btn:hover {
   display: none; /* Hide by default */
   padding: 20px;
   text-align: center;
-  background: url(img/Banner.webp);
+  background: url(img/app.jpg) no-repeat ;
   font-optical-sizing: auto;
   background-size: contain;
-  height: 200px;
+  height: 100px;
 }
 
 .event-banner h2 {
