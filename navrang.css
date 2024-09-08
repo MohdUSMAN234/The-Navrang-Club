@@ -5,6 +5,38 @@ body {
   overflow-x: hidden;
 }
 
+
+.flashing-recruitment {
+  position: fixed;
+  bottom: 60px; /* Move it 60px above the bottom */
+  right: 20px;
+  z-index: 1000;
+}
+
+.recruitment-link {
+  padding: 10px 20px;
+  background-color: #ff0000; /* Flashing background color */
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 5px;
+  animation: flash 1s infinite;
+}
+
+@keyframes flash {
+  0%, 100% { background-color: #ff0000; }
+  50% { background-color: #ff9d9d; }
+}
+
+@media (max-width: 768px) {
+  .recruitment-link {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+
 /* Common Button Styles */
 .button-85 {
   padding: 0.6em 2em;
