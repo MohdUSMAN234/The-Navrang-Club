@@ -177,6 +177,80 @@
   <div class="flashing-recruitment">
     <a href="#events" class="recruitment-link">Recruitment Open</a>
   </div>
+
+
+  
+<!-- Chatbot Container (Initially Hidden) -->
+<div id="chatbot" class="hidden">
+    <div id="chatbox">
+        <div id="chat-header">
+            <h4>NavBot</h4>
+            <button id="closeBtn">&times;</button>
+        </div>
+        <div id="messages"></div>
+        <div id="input-area">
+            <input type="text" id="userInput" placeholder="Type your query..." />
+            <button id="sendBtn">Send</button>
+        </div>
+    </div>
+</div>
+
+<script >
+ // Open/Close Chatbot
+const chatbotIcon = document.getElementById('chatbot-icon');
+const chatbot = document.getElementById('chatbot');
+const closeBtn = document.getElementById('closeBtn');
+
+chatbotIcon.addEventListener('click', () => {
+    chatbot.classList.toggle('open');
+});
+
+closeBtn.addEventListener('click', () => {
+    chatbot.classList.remove('open');
+});
+
+// Handle Chatbot Interactions
+document.getElementById('sendBtn').addEventListener('click', function() {
+    let userInput = document.getElementById('userInput').value;
+    if (userInput.trim() !== "") {
+        addMessage(userInput, 'user');
+        fetchWikipediaSummary(userInput);
+        document.getElementById('userInput').value = '';
+    }
+});
+
+// Add Messages
+function addMessage(text, sender) {
+    let messageDiv = document.createElement('p');
+    messageDiv.textContent = text;
+    messageDiv.classList.add(sender);
+    document.getElementById('messages').appendChild(messageDiv);
+    document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
+}
+
+// Fetch Wikipedia Summary
+function fetchWikipediaSummary(query) {
+    const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(query)}`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if (data.type === 'standard') {
+                const summary = data.extract;
+                const title = data.title;
+                addMessage(`Here's what I found about "${title}": ${summary}`, 'bot');
+            } else {
+                addMessage('Sorry, I couldn\'t find any information on that topic.(Developer is still Working On Me)', 'bot');
+            }
+        })
+        .catch(() => {
+            addMessage('There was an error fetching the data from Wikipedia.', 'bot');
+        });
+}
+
+</script>
+  
+
   
 
 <div class="event-banner">
