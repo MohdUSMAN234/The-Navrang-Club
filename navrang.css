@@ -1225,6 +1225,7 @@ body {
   text-decoration: none;
   font-family: "Comfortaa", sans-serif;
   font-optical-sizing: auto;
+  margin-left: -38px;
 }
 
 
@@ -2210,7 +2211,7 @@ h2.cont{
   }
   
     a.button {
-        width: 33px;
+        width: 81px;
         height: 30px;
     
   }
